@@ -107,6 +107,9 @@ function enemyKill(player, bug) {
         Spike.visible = false;
       }, this);
       player.reset(300, 300);
+
+
+      // storeScore(score); 
       score = 0;
       scoreText.text = 'Score: ' + score;
 

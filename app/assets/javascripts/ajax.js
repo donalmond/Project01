@@ -25,7 +25,7 @@
 //
 
 
-/
+// /
 // class PagesController < ApplicationController
 //   def show
 //     @scores = Score.order(score: :desc).limit(5)
