@@ -109,7 +109,7 @@ function enemyKill(player, bug) {
       player.reset(300, 300);
 
 
-      // storeScore(score); 
+      storeScore(score);
       score = 0;
       scoreText.text = 'Score: ' + score;
 

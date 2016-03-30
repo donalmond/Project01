@@ -1,5 +1,5 @@
 //
-// var storeScore = function(score) {
+var storeScore = function(score) {
 //
 // }
 // var app = app || {}
@@ -12,7 +12,7 @@
       dataType: "JSON",
       data: {
         highscore: {
-          score: app.score,
+          score: score,
           user_id: gon.user_id
         }
       },
@@ -20,7 +20,7 @@
         console.log(data);
       }
     })
-  })
+}
 //
 //
 
