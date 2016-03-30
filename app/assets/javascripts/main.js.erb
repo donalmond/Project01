@@ -1,4 +1,37 @@
+//
+//
+// function mainmenu() {
+//   //show the space tile, repeated
+//    this.backgroundColor = "#4488AA";
+//
+//    //start game text
+//    var text = "Tap to begin";
+//    var style = { font: "30px Arial", fill: "#fff", align: "center" };
+//    var t = this.game.add.text(this.game.width/2, this.game.height/2, text, style);
+//    t.anchor.set(0.5);
+//
+//    if(this.game.input.activePointer.justPressed()) {
+//      this.game.state.start('Game');
+//    }
+//  }
 
+
+
+
+// PAUSE GAME
+var key1;
+function pauseGame () {
+  if (!this.game.paused) {
+    game.paused = true;
+    pauseText = game.add.text(245, 300, 'PAUSED', {
+      fontSize: '32px',
+      fill: 'white'
+    });
+  } else if (this.game.paused){
+    game.paused = false;
+    pauseText.visible = false;
+  }
+}
 
 var generateElementCollect = function ( group, singular, counter)
  {
@@ -94,6 +127,7 @@ var generateElementCollect = function ( group, singular, counter)
 
 		var game = new Phaser.Game(600, 600, Phaser.AUTO, '', {
 			preload: preload,
+      // mainmenu: mainmenu,
 			create: create,
 			update: update
 		});

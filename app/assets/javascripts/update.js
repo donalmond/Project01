@@ -72,8 +72,9 @@ function enemyKill(player, bug) {
 
   if (player.kill()) {
     Spikes.forEach(function(Spike) {
-      Spike.kill();
       Spike.visible = false;
+      Spike.kill();
+
     }, this);
   }
   alert('You Died!');
@@ -103,8 +104,10 @@ function enemyKill(player, bug) {
       alert('Game Over!');
       player.kill();
       Spikes.forEach(function(Spike) {
-        Spike.kill();
         Spike.visible = false;
+        Spike.kill();
+
+
       }, this);
       player.reset(300, 300);
 
@@ -149,7 +152,6 @@ function collectStar(player, star) {
 
   // Removes the star from the screen
   star.kill();
-
   //  Add and update the score
   score += 10;
   scoreText.text = 'score: ' + score;

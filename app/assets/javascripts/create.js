@@ -1,14 +1,21 @@
 var roundStarted = false;
 
 function initialLoad () {
+  this.game.paused = true;
+
   generateSpikes();
 }
 
 function create() {
+
+  key1 = game.input.keyboard.addKey(Phaser.Keyboard.P);
+      key1.onDown.add(pauseGame, this);
   /////////////////////////////////////////////////////////////////////////////
 
   //  We're going to be using physics, so enable the Arcade Physics system
   game.physics.startSystem(Phaser.Physics.ARCADE);
+
+
 
 
   /////////////////////////////////////////////////////////////////////////////
@@ -77,7 +84,7 @@ game.time.events.loop(Phaser.Timer.SECOND * 3, generateSpikes, this);
   });
   livesText.alpha = 0.7;
 
+
   //  Our controls.
   cursors = game.input.keyboard.createCursorKeys();
-
 }

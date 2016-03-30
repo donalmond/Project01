@@ -12,6 +12,7 @@
 
   <nav>
     <%= link_to 'Home', root_path %>
+    <%= link_to 'Leaderboard', highscores_path %>
     <% if @current_user.present? %>
      <% if @current_user.admin? %>
      <%= link_to 'All Users', users_path %>
