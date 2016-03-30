@@ -15,8 +15,25 @@
 //    }
 //  }
 
+// DEATH EVENT
+function dieEvent() {
+pauseText = game.add.text(245, 300, 'YOU DIED', {
+  fontSize: '32px',
+  fill: 'white'
+});
+}
 
-
+// GAME OVER EVENT
+function gameoverEvent() {
+pauseText = game.add.text(230, 300, 'GAME OVER', {
+  fontSize: '32px',
+  fill: 'white'
+});
+pauseText = game.add.text(175, 335, 'Press P to Start Again', {
+  fontSize: '32px',
+  fill: 'white'
+});
+}
 
 // PAUSE GAME
 var key1;

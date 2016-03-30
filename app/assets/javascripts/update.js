@@ -1,5 +1,6 @@
 /////////////////////////////////////////////////////////////////////////////
 function update() {
+
   /////////////////////////////////////////////////////////////////////////////
   storeScore(score);
   //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
@@ -77,7 +78,8 @@ function enemyKill(player, bug) {
 
     }, this);
   }
-  alert('You Died!');
+  dieEvent();
+  this.game.paused = true;
   //Resets the player to initial position on death
   player.reset(300, 300);
 
@@ -101,7 +103,8 @@ function enemyKill(player, bug) {
 
     if (lives === 0) {
       enemySpeedCount = 1;
-      alert('Game Over!');
+      gameoverEvent();
+      this.game.paused = true;
       player.kill();
       Spikes.forEach(function(Spike) {
         Spike.visible = false;
