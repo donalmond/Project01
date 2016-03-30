@@ -17,6 +17,7 @@ var storeScore = function(score) {
         }
       },
       success:function(data){
+         $('#highscores').val(data);
         console.log(data);
       }
     })
