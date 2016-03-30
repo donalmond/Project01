@@ -1,8 +1,10 @@
 var roundStarted = false;
 
 function initialLoad () {
-  welcomeEvent();
 
+  // INTRO TEXT
+  welcomeEvent();
+  // GAME STARTS PAUSED
   this.game.paused = true;
 
   generateSpikes();
@@ -10,20 +12,21 @@ function initialLoad () {
 
 function create() {
 
-  key1 = game.input.keyboard.addKey(Phaser.Keyboard.P);
-      key1.onDown.add(pauseGame, this);
-  /////////////////////////////////////////////////////////////////////////////
-
   //  We're going to be using physics, so enable the Arcade Physics system
   game.physics.startSystem(Phaser.Physics.ARCADE);
 
 
+  /////////////////////////////////////////////////////////////////////////////
+  //												     PAUSE STATE
+  /////////////////////////////////////////////////////////////////////////////
+
+  key1 = game.input.keyboard.addKey(Phaser.Keyboard.P);
+      key1.onDown.add(pauseGame, this);
 
 
   /////////////////////////////////////////////////////////////////////////////
   //												     PLAYER
   /////////////////////////////////////////////////////////////////////////////
-
 
   player = game.add.sprite(300, 300, 'test');
   player.anchor.setTo(0.5, 0.5);
@@ -46,7 +49,6 @@ function create() {
   player.animations.add('down', [0, 1, ], 300, true);
 
 
-
   /////////////////////////////////////////////////////////////////////////////
   // 													    Points
   /////////////////////////////////////////////////////////////////////////////
@@ -62,12 +64,12 @@ function create() {
   /////////////////////////////////////////////////////////////////////////////
   //															ENEMIES
   /////////////////////////////////////////////////////////////////////////////
-if (!roundStarted) {
-  initialLoad();
-  roundStarted = true;
-}
-game.time.events.loop(Phaser.Timer.SECOND * 3, generateSpikes, this);
+  if (!roundStarted) {
+    initialLoad();
+    roundStarted = true;
+    }
 
+  game.time.events.loop(Phaser.Timer.SECOND * 3, generateSpikes, this);
 
 
   /////////////////////////////////////////////////////////////////////////////

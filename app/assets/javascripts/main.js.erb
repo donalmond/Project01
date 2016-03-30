@@ -1,20 +1,4 @@
-//
-//
-// function mainmenu() {
-//   //show the space tile, repeated
-//    this.backgroundColor = "#4488AA";
-//
-//    //start game text
-//    var text = "Tap to begin";
-//    var style = { font: "30px Arial", fill: "#fff", align: "center" };
-//    var t = this.game.add.text(this.game.width/2, this.game.height/2, text, style);
-//    t.anchor.set(0.5);
-//
-//    if(this.game.input.activePointer.justPressed()) {
-//      this.game.state.start('Game');
-//    }
-//  }
-//
+//SHOWS WELCOME TEXT
 function welcomeEvent() {
 pauseText = game.add.text(210, 150, 'AUNID GAME', {
     fontSize: '32px',
@@ -64,6 +48,7 @@ function pauseGame () {
   }
 }
 
+//RANDOM STAR GENERATOR
 var generateElementCollect = function ( group, singular, counter)
  {
 	//  We will enable physics for any star that is created in this group
@@ -82,10 +67,9 @@ var generateElementCollect = function ( group, singular, counter)
 	return group;
 };
 
-		///////////////////////////////////////////////////////////////////////////
-
+//RANDOM ENEMY GENERATOR
   var generateSpikes = function(number) {
-    number = number || enemyMultiplierCount;
+    number = enemyMultiplierCount;
     var xPosSpike = 0;
     var yPosSpike = 0;
     var Direction;
@@ -95,52 +79,46 @@ var generateElementCollect = function ( group, singular, counter)
     // sets number of bugs
     for (var i = 0; i < number; i++) {
 
+    // DICTATES ENEMY SPAWN
     var sideRandomizer = Math.random();
-    if (sideRandomizer <= 0.25) {
-    //TOP
 
+    //TOP
+    if (sideRandomizer <= 0.25) {
     xPosSpike = Math.random() * (game.width);
     yPosSpike = 0;
     xDirection = "Top";
     }
-    else if ((sideRandomizer > 0.25) && (sideRandomizer <= 0.5))  {
-    //RIGHT
 
+    //RIGHT
+    else if ((sideRandomizer > 0.25) && (sideRandomizer <= 0.5))  {
     xPosSpike = game.width;
     yPosSpike = Math.random() * (game.height);
     xDirection = "Right";
     }
-    else if ((sideRandomizer > 0.5) && (sideRandomizer <= 0.75)) {
-    //BOTTOM
 
+    //BOTTOM
+    else if ((sideRandomizer > 0.5) && (sideRandomizer <= 0.75)) {
     xPosSpike = Math.random() * (game.width);
     yPosSpike = game.width;
     xDirection = "Bottom";
     }
-    else if ((sideRandomizer > 0.75) && (sideRandomizer <= 1)) {
-    //LEFT
 
+    //LEFT
+    else if ((sideRandomizer > 0.75) && (sideRandomizer <= 1)) {
     xPosSpike = 0;
     yPosSpike = Math.random() * (game.height);
     xDirection = "Left";
     }
 
-      // if position is within( x and y section )
-      var Spike = Spikes.create(xPosSpike,
-          yPosSpike, "Spike");
-
-      // turning this off allows the bug to bounce up and down together
-    // game.physics.arcade.enable(Spike);
-    Spike.body.collideWorldBounds = false;
+    // if position is within( x and y section )
+    var Spike = Spikes.create(xPosSpike,
+    yPosSpike, "Spike");
 
     //prevents sprite from acting strangely on rotate
     Spike.anchor.setTo(0.5, 0.5);
-    //
-    Spike.angle = 180;
 
     //the velocity axis determines whether it moves horizontal or vertical
-    // var spikeDirection = Math.random();
-
+    // SETTING DIRECTECTION FOR ENEMY
     if (xDirection === "Top") {
       Spike.body.velocity.y = 200 + enemySpeedCount;
     } else if (xDirection === "Right") {
@@ -158,7 +136,6 @@ var generateElementCollect = function ( group, singular, counter)
 
 		var game = new Phaser.Game(600, 600, Phaser.AUTO, 'aunid', {
 			preload: preload,
-      // mainmenu: mainmenu,
 			create: create,
 			update: update
 		});

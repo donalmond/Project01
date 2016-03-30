@@ -7,7 +7,6 @@ function update() {
   game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
   // Player overlap with enemies
-  game.physics.arcade.overlap(player, enemyKill, null, this);
   game.physics.arcade.overlap(player, Spikes, enemyKill, null, this);
 
   /////////////////////////////////////////////////////////////////////////////
@@ -55,17 +54,17 @@ function update() {
     player.frame = 4;
   }
 
-
-
   // Shows lives initially
   livesText.text = 'Lives: ' + lives;
+
+
   /////////////////////////////////////////////////////////////////////////////
   // 												    	Death
   /////////////////////////////////////////////////////////////////////////////
   //     Allows bug to kill player
 }
 
-function enemyKill(player, bug) {
+function enemyKill(player, Spike) {
   if (lives !== 0) {
 
       //Kills player
@@ -142,7 +141,7 @@ function enemyKill(player, bug) {
 }
 
 ////////////////////////////////////////////////////////////////////////////
-//										Collecting to win
+//										Collecting Stars to win
 ////////////////////////////////////////////////////////////////////////////
 
 // used to speed up enemies etc
