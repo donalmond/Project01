@@ -27,7 +27,9 @@ end
   end
 
   def index
-    @highscores = Highscore.order(score: :desc).limit(5)
+
+ @allhighscores = Highscore.order(score: :desc).limit(5)
+
   end
 
   private

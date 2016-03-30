@@ -1,1 +1,9 @@
 <h1>this is the highscores</h1>
+<% @allhighscores.each do |scorelist| %>
+<li>
+<%if  scorelist.user.present? %>
+<%= scorelist.user.username%>
+<%= scorelist.score %>
+</li>
+<% end %>
+<% end %>

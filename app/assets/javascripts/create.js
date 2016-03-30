@@ -1,6 +1,8 @@
 var roundStarted = false;
 
 function initialLoad () {
+  welcomeEvent();
+
   this.game.paused = true;
 
   generateSpikes();

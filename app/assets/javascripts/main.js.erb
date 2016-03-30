@@ -14,6 +14,19 @@
 //      this.game.state.start('Game');
 //    }
 //  }
+//
+function welcomeEvent() {
+pauseText = game.add.text(210, 150, 'AUNID GAME', {
+    fontSize: '32px',
+    fill: 'gold'
+  });
+
+pauseText2 = game.add.text(195, 400, 'Press P To Start', {
+  fontSize: '32px',
+  fill: 'white'
+});
+}
+
 
 // DEATH EVENT
 function dieEvent() {
@@ -47,6 +60,7 @@ function pauseGame () {
   } else if (this.game.paused){
     game.paused = false;
     pauseText.visible = false;
+    pauseText2.visible = false;
   }
 }
 
