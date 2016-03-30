@@ -166,7 +166,7 @@ function collectStar(player, star) {
   testEnemyMultiplierCount += 1;
 
 // if 15 stars collected spawn an extra enemy
-  if (testEnemyMultiplierCount >= 15) {
+  if (testEnemyMultiplierCount >= 25) {
     testEnemyMultiplierCount = 1;
     enemyMultiplierCount += 1;
   }

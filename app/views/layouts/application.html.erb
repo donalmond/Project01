@@ -9,6 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
 
   <nav>
     <%= link_to 'Home', root_path %>
@@ -31,7 +32,10 @@
   </h2>
   <% end %>
 
+         <div id="aunid"></div>
 <%= yield %>
 
+
+</div>
 </body>
 </html>

@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   text-align: center;
+  background-color: black;
+  color: salmon;
+}
+
+a {
+  color: salmon;
+}
+
+nav {
+  padding: 20px;
 }
 
 .container {
@@ -12,5 +22,9 @@ body {
 
 
 canvas {
-  padding-left: 26%;
+  border: 1px solid salmon;
+}
+
+#aunid {
+  padding-left: 18%;
 }
