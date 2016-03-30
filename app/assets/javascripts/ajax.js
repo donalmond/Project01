@@ -6,21 +6,21 @@
 //
 //
 //
-//     $.ajax({
-//       url: "/highscores",
-//       method: "POST",
-//       dataType: "JSON",
-//       data: {
-//         highscore: {
-//           score: app.score,
-//           user_id: user_id
-//         }
-//       },
-//       success:function(data){
-//         console.log(data);
-//       }
-//     })
-//   })
+    $.ajax({
+      url: "/highscores",
+      method: "POST",
+      dataType: "JSON",
+      data: {
+        highscore: {
+          score: app.score,
+          user_id: gon.user_id
+        }
+      },
+      success:function(data){
+        console.log(data);
+      }
+    })
+  })
 //
 //
 
