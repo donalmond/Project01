@@ -1,0 +1,118 @@
+
+
+var generateElementCollect = function ( group, singular, counter)
+ {
+	//  We will enable physics for any star that is created in this group
+	group.enableBody = true;
+	//  Here we'll create 12 of them evenly spaced apart
+	for (var i = 0; i < counter; i++) {
+		//  Create Random placed star inside of the 'stars' group
+		var xPos = Math.random() * (game.width - 20);
+		var yPos = Math.random() * (game.height - 20);
+
+		// if position is within( x and y section )
+		var element = group.create(xPos,
+				yPos, singular);
+
+	}
+	return group;
+};
+
+		///////////////////////////////////////////////////////////////////////////
+
+  var generateSpikes = function(number) {
+    number = number || enemyMultiplierCount;
+    var xPosSpike = 0;
+    var yPosSpike = 0;
+    var Direction;
+
+    Spikes = game.add.group();
+    Spikes.enableBody = true;
+    // sets number of bugs
+    for (var i = 0; i < number; i++) {
+
+    var sideRandomizer = Math.random();
+    if (sideRandomizer <= 0.25) {
+    //TOP
+
+    xPosSpike = Math.random() * (game.width);
+    yPosSpike = 0;
+    xDirection = "Top";
+    }
+    else if ((sideRandomizer > 0.25) && (sideRandomizer <= 0.5))  {
+    //RIGHT
+
+    xPosSpike = game.width;
+    yPosSpike = Math.random() * (game.height);
+    xDirection = "Right";
+    }
+    else if ((sideRandomizer > 0.5) && (sideRandomizer <= 0.75)) {
+    //BOTTOM
+
+    xPosSpike = Math.random() * (game.width);
+    yPosSpike = game.width;
+    xDirection = "Bottom";
+    }
+    else if ((sideRandomizer > 0.75) && (sideRandomizer <= 1)) {
+    //LEFT
+
+    xPosSpike = 0;
+    yPosSpike = Math.random() * (game.height);
+    xDirection = "Left";
+    }
+
+      // if position is within( x and y section )
+      var Spike = Spikes.create(xPosSpike,
+          yPosSpike, "Spike");
+
+      // turning this off allows the bug to bounce up and down together
+    // game.physics.arcade.enable(Spike);
+    Spike.body.collideWorldBounds = false;
+
+    //prevents sprite from acting strangely on rotate
+    Spike.anchor.setTo(0.5, 0.5);
+    //
+    Spike.angle = 180;
+
+    //the velocity axis determines whether it moves horizontal or vertical
+    // var spikeDirection = Math.random();
+
+    if (xDirection === "Top") {
+      Spike.body.velocity.y = 200 + enemySpeedCount;
+    } else if (xDirection === "Right") {
+      Spike.body.velocity.x = -200 + enemySpeedCount;
+    } else if (xDirection === "Bottom") {
+      Spike.body.velocity.y = -200 + enemySpeedCount;
+    } else if (xDirection === "Left") {
+      Spike.body.velocity.x = 200 + enemySpeedCount;
+    }
+
+    }
+};
+
+		/////////////////////////////////////////////////////////////////////////////
+
+		var game = new Phaser.Game(600, 600, Phaser.AUTO, '', {
+			preload: preload,
+			create: create,
+			update: update
+		});
+
+		/////////////////////////////////////////////////////////////////////////////
+		function preload() {
+			/////////////////////////////////////////////////////////////////////////////
+
+          game.load.image('star', '<%= image_path("star.png") %>');
+    			game.load.image('Spike', '<%= image_path("spike.png") %>');
+    			game.load.image('test', '<%= image_path("test.png") %>', 20, 20);
+		}
+
+
+		var player = null;
+		var platforms;
+		var SpikeCount = 0;
+		var stars;
+		var score = 0;
+		var scoreText;
+		var lives = 3;
+		var livesText;
