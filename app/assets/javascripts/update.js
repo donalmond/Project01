@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////
 function update() {
   /////////////////////////////////////////////////////////////////////////////
-
+  storeScore(score);
   //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
   game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
@@ -108,8 +108,6 @@ function enemyKill(player, bug) {
       }, this);
       player.reset(300, 300);
 
-
-      storeScore(score);
       score = 0;
       scoreText.text = 'Score: ' + score;
 
