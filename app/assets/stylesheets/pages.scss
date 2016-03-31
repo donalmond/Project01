@@ -15,6 +15,13 @@ nav {
   padding: 20px;
 }
 
+.userscore {
+  border: 1px solid salmon;
+  
+    width: 600px;
+    margin: 0 auto;
+}
+
 .scorelist {
   color: #95EA3E;
   line-height: 20px;
@@ -23,7 +30,7 @@ nav {
 .scorebox {
 border: 1px solid salmon;
 
-height: 200px;
+height: 300px;
   width: 600px;
   margin: 0 auto;
 }
@@ -36,5 +43,5 @@ height: 200px;
 #aunid {
   margin: 0 auto;
   width: 600px;
-    border: 1px solid salmon;
+  border: 1px solid salmon;
 }

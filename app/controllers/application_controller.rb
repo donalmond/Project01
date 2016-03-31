@@ -4,7 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :fetch_user
+  before_action :set_all_highscores
+
   private
+  def set_all_highscores
+    @allhighscores = Highscore.all
+  end
   def fetch_user
    @current_user = User.find_by :id => session[:user_id] if session[:user_id].present?
    gon.user_id = @current_user.id if @current_user

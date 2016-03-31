@@ -13,7 +13,7 @@
 
   <nav>
     <%= link_to 'Home', root_path %>
-    <%= link_to 'Leaderboard', highscores_path %>
+    <!-- <%= link_to 'Leaderboard', highscores_path %> -->
     <% if @current_user.present? %>
      <% if @current_user.admin? %>
      <%= link_to 'All Users', users_path %>
@@ -32,9 +32,39 @@
   </h2>
   <% end %>
 
-         <div id="aunid"></div>
-         
+
+
 <%= yield %>
+ <div id="aunid"></div>
+<div class="userscore">
+  <h2 >YOUR HIGHSCORE</h2>
+  <p id="highscore" class="scorelist">0</p>
+</div>
+
+<div class="scorebox">
+<h2>HIGHSCORES</h2>
+<% @allhighscores.each_with_index do |scorelist, index| %>
+<div class="scorelist">
+<%if scorelist.user.present? %>
+<p>
+  <% if index == 0  %>
+  <img src="/assets/crown.png" alt="" />
+<% end %>
+  User:
+<%= scorelist.user.username%>
+   =>
+  Score:
+<%= scorelist.score %>
+
+<% if index == 0  %>
+<img src="/assets/crown.png" alt="" />
+<% end %>
+
+</p>
+</div>
+<% end %>
+<% end %>
+</div>
 
 
 </div>
