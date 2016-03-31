@@ -15,7 +15,7 @@ function update() {
 
   if (cursors.left.isDown) {
     //  Move to the left
-    player.body.velocity.x = -300;
+    player.body.velocity.x = -600;
 
     player.animations.play('left');
     // player.angle = 180;
@@ -23,7 +23,7 @@ function update() {
 
   } else if (cursors.right.isDown) {
     //  Move to the right
-    player.body.velocity.x = 300;
+    player.body.velocity.x = 600;
 
     player.animations.play('right');
     // player.angle = 0;
@@ -31,7 +31,7 @@ function update() {
 
   } else if (cursors.up.isDown) {
     //  Move up.
-    player.body.velocity.y = -300;
+    player.body.velocity.y = -600;
 
     player.animations.play('up');
     player.angle = 0;
@@ -39,7 +39,7 @@ function update() {
     // player.angle = 270;
   } else if (cursors.down.isDown) {
     //  Move down
-    player.body.velocity.y = 300;
+    player.body.velocity.y = 600;
 
     player.animations.play('down');
     // player.angle = 90;
@@ -160,7 +160,7 @@ function collectStar(player, star) {
   generateElementCollect( stars, "star", 1);
 
   // used to speed up enemies etc
-  enemySpeedCount += 5;
+  enemySpeedCount += 0.01;
   // used to add enemy spawn count
   testEnemyMultiplierCount += 1;
 

@@ -1,36 +1,36 @@
 //SHOWS WELCOME TEXT
 function welcomeEvent() {
-pauseText = game.add.text(210, 150, 'AUNID GAME', {
+  pauseText = game.add.text(210, 150, 'AUNID GAME', {
     fontSize: '32px',
     fill: 'gold'
   });
 
-pauseText2 = game.add.text(195, 400, 'Press P To Start', {
-  fontSize: '32px',
-  fill: 'white'
-});
+  pauseText2 = game.add.text(195, 400, 'Press P To Start', {
+    fontSize: '32px',
+    fill: 'white'
+  });
 }
 
 
 // DEATH EVENT
 function dieEvent() {
-pauseText = game.add.text(245, 300, 'YOU DIED', {
-  fontSize: '32px',
-  fill: 'white'
-});
+  pauseText = game.add.text(245, 300, 'YOU DIED', {
+    fontSize: '32px',
+    fill: 'white'
+  });
 }
 
 // GAME OVER EVENT
 function gameoverEvent() {
-pauseText = game.add.text(230, 300, 'GAME OVER', {
-  fontSize: '32px',
-  fill: 'white'
-});
-pauseText = game.add.text(175, 335, 'Press P to Start Again', {
-  fontSize: '32px',
-  fill: 'white'
-});
-}
+  pauseText = game.add.text(230, 300, 'GAME OVER', {
+    fontSize: '32px',
+    fill: 'white'
+  });
+  pauseText = game.add.text(175, 335, 'Press P to Start Again', {
+    fontSize: '32px',
+    fill: 'white'
+  });
+  }
 
 // PAUSE GAME
 var key1;
@@ -67,7 +67,7 @@ var generateElementCollect = function ( group, singular, counter)
 	return group;
 };
 
-//RANDOM ENEMY GENERATOR
+  //RANDOM ENEMY GENERATOR
   var generateSpikes = function(number) {
     number = enemyMultiplierCount;
     var xPosSpike = 0;
@@ -119,20 +119,20 @@ var generateElementCollect = function ( group, singular, counter)
 
     //the velocity axis determines whether it moves horizontal or vertical
     // SETTING DIRECTECTION FOR ENEMY
-    if (xDirection === "Top") {
-      Spike.body.velocity.y = 200 + enemySpeedCount;
+    if        (xDirection === "Top") {
+      Spike.body.velocity.y = 200 * enemySpeedCount;
     } else if (xDirection === "Right") {
-      Spike.body.velocity.x = -200 + enemySpeedCount;
+      Spike.body.velocity.x = -200 * enemySpeedCount;
     } else if (xDirection === "Bottom") {
-      Spike.body.velocity.y = -200 + enemySpeedCount;
+      Spike.body.velocity.y = -200 * enemySpeedCount;
     } else if (xDirection === "Left") {
-      Spike.body.velocity.x = 200 + enemySpeedCount;
+      Spike.body.velocity.x = 200 * enemySpeedCount;
     }
-
     }
-};
-
-		/////////////////////////////////////////////////////////////////////////////
+  };
+    /////////////////////////////////////////////////////////////////////////////
+    //                      SETTING UP CANVAS AND GAME
+		//////////////////////////////////////////////////////////////////////////
 
 		var game = new Phaser.Game(600, 600, Phaser.AUTO, 'aunid', {
 			preload: preload,
