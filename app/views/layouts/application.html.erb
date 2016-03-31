@@ -47,9 +47,17 @@
 <div class="scorelist">
 <%if scorelist.user.present? %>
 <p>
+  
   <% if index == 1  %>
   <%= image_tag "crown.png" %>
 <% end %>
+<% if index == 2  %>
+<%= image_tag "silvercrown.png" %>
+<% end %>
+<% if index == 3  %>
+<%= image_tag "bronzecrown.png" %>
+<% end %>
+
   User:
 <%= scorelist.user.username%>
    =>
@@ -58,6 +66,12 @@
 
 <% if index == 1  %>
 <%= image_tag "crown.png" %>
+<% end %>
+<% if index == 2  %>
+<%= image_tag "silvercrown.png" %>
+<% end %>
+<% if index == 3  %>
+<%= image_tag "bronzecrown.png" %>
 <% end %>
 
 </p>

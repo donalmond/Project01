@@ -1,4 +1,3 @@
-#PROJECT 1.0
 #AUNID GAME
 
 Heroku URL: https://aunid.herokuapp.com/
