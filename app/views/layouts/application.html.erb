@@ -48,7 +48,7 @@
 <%if scorelist.user.present? %>
 <p>
   <% if index == 0  %>
-  <img src="/assets/crown.png" alt="" />
+  <%= image_tag "crown.png" %>
 <% end %>
   User:
 <%= scorelist.user.username%>
@@ -57,7 +57,7 @@
 <%= scorelist.score %>
 
 <% if index == 0  %>
-<img src="/assets/crown.png" alt="" />
+<%= image_tag "crown.png" %>
 <% end %>
 
 </p>
