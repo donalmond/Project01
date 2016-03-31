@@ -56,3 +56,6 @@ There are no levels, the game is progressive. The more points you accumulate the
 * Adding power-ups
 * Adding different enemies
 * Making everything prettier
+* Fixing P Bug
+* Fixing Scoring bug
+* fixing Highscores bug
