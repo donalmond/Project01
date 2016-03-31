@@ -101,6 +101,7 @@ function enemyKill(player, Spike) {
   ////////////////////////////////////////////////////////////////////////////
 
     if (lives === 0) {
+      storeScore(score);
       enemySpeedCount = 1;
       gameoverEvent();
       this.game.paused = true;
