@@ -20,16 +20,21 @@ nav {
   line-height: 20px;
 }
 
+.scorebox {
+border: 1px solid salmon;
+
+height: 200px;
+  width: 600px;
+  margin: 0 auto;
+}
+
 .container {
   width: 960px;
   margin: 0 auto;
 }
 
-
-canvas {
-  border: 1px solid salmon;
-}
-
 #aunid {
-  padding-left: 18%;
+  margin: 0 auto;
+  width: 600px;
+    border: 1px solid salmon;
 }
