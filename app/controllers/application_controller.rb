@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
 
   private
   def set_all_highscores
-    # @allhighscores = Highscore.all
-    # @allhighscores = Highscore.order(score: :desc).limit(5)
-    @topuser
+    highscores = Highscore.all
+    @allhighscores = Highscore.order(score: :desc).limit(5)
+    # @topuser
   end
   def fetch_user
    @current_user = User.find_by :id => session[:user_id] if session[:user_id].present?

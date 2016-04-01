@@ -27,7 +27,7 @@ class HighscoresController < ApplicationController
   end
 
   def index
-  @allhighscores = Highscore.all
+  # @allhighscores = Highscore.all
 
  # @allhighscores = Highscore.order(score: :desc).limit(5)
 

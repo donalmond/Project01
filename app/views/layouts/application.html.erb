@@ -45,38 +45,36 @@
 <h2>HIGHSCORES</h2>
 <% @allhighscores.each_with_index do |scorelist, index| %>
 <div class="scorelist">
-<%if scorelist.user.present? %>
+
 <p>
-  
-  <% if index == 1  %>
+  <% if index == 0  %>
   <%= image_tag "crown.png" %>
 <% end %>
-<% if index == 2  %>
+<% if index == 1  %>
 <%= image_tag "silvercrown.png" %>
 <% end %>
-<% if index == 3  %>
+<% if index == 2  %>
 <%= image_tag "bronzecrown.png" %>
 <% end %>
 
   User:
-<%= scorelist.user.username%>
+<%= scorelist.user.username if scorelist.user %>
    =>
   Score:
-<%= scorelist.score %>
+<%= scorelist.score if scorelist.score%>
 
-<% if index == 1  %>
+<% if index == 0  %>
 <%= image_tag "crown.png" %>
 <% end %>
-<% if index == 2  %>
+<% if index == 1  %>
 <%= image_tag "silvercrown.png" %>
 <% end %>
-<% if index == 3  %>
+<% if index == 2  %>
 <%= image_tag "bronzecrown.png" %>
 <% end %>
 
 </p>
 </div>
-<% end %>
 <% end %>
 </div>
 
