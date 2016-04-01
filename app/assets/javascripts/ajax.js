@@ -27,8 +27,8 @@ $.ajax({
      $('#highscore').html(data.score);
       console.log(data);
     }
-  });
-};
+  })
+}
 //
 //
 
