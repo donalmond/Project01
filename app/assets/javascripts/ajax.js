@@ -7,7 +7,7 @@ var storeScore = function(score) {
 //
 //
 $.ajax({
-    url: "window.location.host + /highscores",
+    url: "/highscores",
     method: "POST",
     dataType: "json",
     data: {
