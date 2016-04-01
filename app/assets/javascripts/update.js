@@ -1,6 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
 function update() {
-  storeScore(score);
 
   /////////////////////////////////////////////////////////////////////////////
   //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
@@ -153,6 +152,7 @@ function collectStar(player, star) {
 
   // Removes the star from the screen
   star.kill();
+  storeScore(score);
   //  Add and update the score
   score += 10;
   scoreText.text = 'score: ' + score;
