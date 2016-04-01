@@ -152,9 +152,9 @@ function collectStar(player, star) {
 
   // Removes the star from the screen
   star.kill();
-  storeScore(score);
   //  Add and update the score
   score += 10;
+  storeScore(score);
   scoreText.text = 'score: ' + score;
   generateElementCollect( stars, "star", 1);
 
