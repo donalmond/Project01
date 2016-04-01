@@ -3,6 +3,7 @@ class HighscoresController < ApplicationController
     @highscore = Highscore.new
   end
 
+
   def create
   # @highscore = Highscore.new(highscore_params)
   @highscore = Highscore.find_by :user_id => params[:highscore][:user_id]

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :fetch_user
   before_action :set_all_highscores
 
+ 
   private
   def set_all_highscores
     highscores = Highscore.all
